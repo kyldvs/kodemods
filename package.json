@@ -1,0 +1,22 @@
+{
+  "name": "kodemods",
+  "version": "0.0.0",
+  "description": "some codemods",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo lol"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kyldvs/kodemods.git"
+  },
+  "keywords": [
+    "js",
+    "codemod"
+  ],
+  "author": "Kyle Davis",
+  "bugs": {
+    "url": "https://github.com/kyldvs/kodemods/issues"
+  },
+  "homepage": "https://github.com/kyldvs/kodemods#readme"
+}
