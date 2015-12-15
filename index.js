@@ -1,7 +1,7 @@
 'use strict';
 
-import findClassesWithSuperClasses from 'lib/findClassesWithSuperClasses';
-export {findClassesWithSuperClasses};
+import findClassesWithSuperClass from './lib/findClassesWithSuperClass';
+export {findClassesWithSuperClass};
 
-import findIdentifierForDefaultImport from 'lib/findIdentifierForDefaultImport';
+import findIdentifierForDefaultImport from './lib/findIdentifierForDefaultImport';
 export {findIdentifierForDefaultImport};

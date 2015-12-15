@@ -1,14 +1,9 @@
 'use strict';
 
-// import {findClassesWithSuperClass} from '..';
-// import jscodeshift from 'jscodeshift';
-
-const index = require('..');
-const jscodeshift = require('jscodeshift');
+import {findClassesWithSuperClass} from '..';
+import jscodeshift from 'jscodeshift';
 
 const API = {jscodeshift};
-
-const findClassesWithSuperClass = index.findClassesWithSuperClass;
 
 describe('findClassesWithSuperClass', () => {
   it('should find simple classes', () => {
