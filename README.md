@@ -1,9 +1,9 @@
-# kodemods
-just some code mod things
+# Kodemods
+Just some code mod things.
 
-# usage
+# Usage
 
-General usage is like this:
+General usage works like this:
 
 ```js
 import {someCodemod} from 'kodemods';
@@ -23,7 +23,12 @@ export default function(file, api) {
 
 ```
 
-# api docs
+# API Documentation
+
+## Overview
+
+- [`findclasseswithsuperclass`](#findclasseswithsuperclass)
+- [`findNameForDefaultImport`](#findNameForDefaultImport)
 
 ## findClassesWithSuperClass
 
