@@ -27,8 +27,8 @@ export default function(file, api) {
 
 ## Overview
 
-- [`findclasseswithsuperclass`](#findclasseswithsuperclass)
-- [`findNameForDefaultImport`](#findNameForDefaultImport)
+- [`findClassesWithSuperClass`](#findclasseswithsuperclass)
+- [`findNameForDefaultImport`](#findnamefordefaultimport)
 
 ## findClassesWithSuperClass
 
