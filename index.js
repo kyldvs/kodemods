@@ -3,5 +3,5 @@
 import findClassesWithSuperClass from './lib/findClassesWithSuperClass';
 export {findClassesWithSuperClass};
 
-import findIdentifierForDefaultImport from './lib/findIdentifierForDefaultImport';
-export {findIdentifierForDefaultImport};
+import findNameForDefaultImport from './lib/findNameForDefaultImport';
+export {findNameForDefaultImport};

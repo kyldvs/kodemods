@@ -5,7 +5,7 @@ import jscodeshift from 'jscodeshift';
 
 const TESTS = [
   {
-    name: 'should find simple classes',
+    desc: 'should find simple classes',
     code: `
       class Foo extends Bar {}
     `,
@@ -18,7 +18,7 @@ const TESTS = [
     ],
   },
   {
-    name: 'should find multiple classes',
+    desc: 'should find multiple classes',
     code: `
       class Foo extends Bar {}
       class Baz extends Bar {
@@ -38,7 +38,7 @@ const TESTS = [
     ],
   },
   {
-    name: 'should support complex queries',
+    desc: 'should support complex queries',
     code: `
       class Foo extends fn(1) {}
       class Bar extends fn(2) {}
@@ -62,7 +62,7 @@ const TESTS = [
 
 describe('findClassesWithSuperClass', () => {
   TESTS.forEach(test => {
-    it(test.name, () => {
+    it(test.desc, () => {
       const root = jscodeshift(test.code);
       const paths = findClassesWithSuperClass({jscodeshift}, root, test.query);
       const classNames = paths.map(path => path.node.id.name);

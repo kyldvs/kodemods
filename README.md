@@ -52,3 +52,33 @@ const resultBar = findClassesWithSuperClass(api, root, {
 // remove all classes that `extend bar()`
 resultBar.forEach(path => path.replace());
 ```
+
+## findNameForDefaultImport
+
+This helper finds the name of the identifier that corresponds to a particular
+default import or requires. This returns a **string**.
+
+```js
+import {findNameForDefaultImport} from 'kodemods';
+
+const root = jscodeshift(`
+  import bar from 'foo';
+  import baz, {buz} from 'boz';
+`);
+
+findNameForDefaultImport(api, root, 'foo'); // bar
+findNameForDefaultImport(api, root, 'boz'); // baz
+findNameForDefaultImport(api, root, 'baz'); // undefined
+```
+
+The basic idea is that this will enable you to more safely track how something
+is used after being imported. It is now easy to identify anything using
+`NamespaceBaseClass` even though in code it is always just used as `BaseClass`:
+
+```js
+const BaseClass = require('NamespaceBaseClass');
+
+class Foo extends BaseClass {
+  // ...
+}
+```
