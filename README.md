@@ -27,8 +27,44 @@ export default function(file, api) {
 
 ## Overview
 
+- [`findAPIOfClass`](#findapiofclass)
 - [`findClassesWithSuperClass`](#findclasseswithsuperclass)
 - [`findNameForDefaultImport`](#findnamefordefaultimport)
+
+## findAPIOfClass
+
+This will find the public API of a class. It returns an object with three
+keys: `public`, `private`, `protected`. Each key is an **array** of **node
+paths**.
+
+```
+{
+  public: [...],
+  protected: [...],
+  private: [...],
+}
+```
+
+Right now this isn't perfect, it won't find the undocumented parts of your
+API. It will only pull out classes and method definitions. In general this
+will find the API of your class assuming the file is docmented with `@flow`.
+
+This is how you could remove all of the private methods of a class:
+
+```js
+import {findAPIOfClass} from 'kodemods';
+
+// Find the class node somehow.
+const classToFix = root
+  .find(j.ClassDeclaration, {id: {name: 'Foo'}})
+  .paths()[0];
+
+// Find the API.
+const result = findAPIOfClass(api, classToFix);
+
+// Remove private methods and properties.
+result.private.forEach(path => path.replace());
+```
 
 ## findClassesWithSuperClass
 
